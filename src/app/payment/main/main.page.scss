@@ -1,0 +1,40 @@
+ion-header {
+  background: var(--white) !important;
+  ion-toolbar ion-title {
+    padding: 0 15px !important;
+    font-size: 1.15rem !important;
+    ion-icon {
+      min-width: fit-content;
+      padding: 0 2px;
+      font-size: 1.3rem;
+      color: var(--text-light3);
+    }
+  }
+}
+
+ion-content {
+  ion-grid {
+    margin: 32px;
+    ion-col {
+      margin: 16px;
+      padding: 8px;
+      background: #FFFFFF;
+      box-shadow: 4px 4px 7px 2px rgba(0, 0, 0, 0.1);
+      border-radius: 16px;
+      display: flex;
+      flex-direction: column;
+
+      img {
+        padding: 24px;
+      }
+      ion-label {
+        /* Airtime & Data */
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        color: black;
+      }
+    }
+  }
+}
+

@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" mode="md">
+      <ion-back-button text="" icon=""></ion-back-button>
+    </ion-buttons>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg_color">
+  <div class="footer-rc4"><img src="assets/images/rc4.svg"/></div>
+  <div class="splash-bg-rectangle rotate1"></div>
+  <div class="splash-bg-rectangle rotate2"></div>
+  <div class="splash-bg-rectangle rotate3"></div>
+  <div class="splash-bg-rectangle rotate4"></div>
+  <h2 class="ion-text-center text-primary fw-700 mb-25px animate__animated animate__fadeInUp">Security</h2>
+  <div class="form animate__animated animate__fadeInUp">
+    <ion-list lines="none">
+      <div class="btn btn-primary ion-justify-content-between animate__animated animate__fadeInUp" (click)="changeStatus('biometrics')">
+        Biometrics
+        <ion-toggle slot="start" name="biometrics" color="secondary" [(ngModel)]="status.biometrics"></ion-toggle>
+      </div>
+      <div class="btn btn-primary ion-justify-content-between animate__animated animate__fadeInUp" (click)="changeStatus('emailAlert')">
+        Email Alert
+        <ion-toggle slot="start" name="email_alert" color="secondary" [(ngModel)]="status.emailAlert"></ion-toggle>
+      </div>
+      <div class="btn btn-primary ion-justify-content-between animate__animated animate__fadeInUp" (click)="changeStatus('transactionPin')">
+        Transaction Pin
+        <ion-toggle slot="start" name="transaction_pin" color="secondary" [(ngModel)]="status.transactionPin"></ion-toggle>
+      </div>
+      <div class="btn btn-primary ion-justify-content-between animate__animated animate__fadeInUp" (click)="changeStatus('twoStep')">
+        <ion-label>
+          <span>2-Step Verification</span>
+          <p class="fs-10 lh-12 text-white">
+            Add an extra layer of security to your<br />
+            account by using a one-time security<br />
+            code in addition to your password<br />
+            each time you log in.
+          </p>
+        </ion-label>
+        <ion-toggle slot="start" name="two_step" color="secondary" [(ngModel)]="status.twoStep"></ion-toggle>
+      </div>
+    </ion-list>
+  </div>
+</ion-content>

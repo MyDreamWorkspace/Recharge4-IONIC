@@ -1,0 +1,57 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start" mode="md">
+            <ion-back-button text="" icon=""></ion-back-button>
+        </ion-buttons>
+        <ion-title></ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg_color">
+    <div class="footer-rc4"><img src="assets/images/rc4.svg"/></div>
+    <div class="splash-bg-rectangle rotate1"></div>
+    <div class="splash-bg-rectangle rotate2"></div>
+    <div class="splash-bg-rectangle rotate3"></div>
+    <div class="splash-bg-rectangle rotate4"></div>
+    <div class="banner">
+        <img src="assets/images/ic_airtime.svg">
+    </div>
+    <h2 class="ion-text-center">Airtime Password</h2>
+    <div class="form animate__animated animate__fadeInUp">
+        <ion-list lines="none">
+            <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                <div class="item_inner">
+                    <ion-select mode="md" (ionChange)="onCategoryChange()" [(ngModel)]="category" [interfaceOptions]="customActionSheetOptions" interface="action-sheet" placeholder="Select a Category">
+                        <ion-select-option value="airtime">Airtime</ion-select-option>
+                        <ion-select-option value="data">Data</ion-select-option>
+                    </ion-select>
+                </div>
+            </ion-item>
+
+            <ion-item class="animate__animated animate__fadeInUp" [attr.style]="this.loadable || this.error ? 'margin-bottom: 12px' : 'margin-bottom: 45px'" lines="none">
+                <div class="item_inner">
+                    <ion-input mode="md" type="number" placeholder="Enter Phone Number" [(ngModel)]="phone"  (ionChange)="onPhoneChange()"></ion-input>
+                    <img class="flag" src="assets/images/flag_nig.svg">
+                </div>
+            </ion-item>
+          <ion-spinner name="crescent" *ngIf="this.loadable==true"></ion-spinner>
+          <div style="color: #eb445a; font-weight: bold; height: 33px;" *ngIf="this.loadable==false && this.error">The phone number is not valid.</div>
+
+            <ion-item class="animate__animated animate__fadeInUp" lines="none" *ngIf="this.category == 'airtime' || this.category == 'data'">
+              <div class="item_inner">
+                <ion-input *ngIf="this.category == 'airtime'" mode="md" type="number" placeholder="Amount" [(ngModel)]="amount"></ion-input>
+                <div class="data_container" [attr.style]="this.category =='data' ? 'display:block;' : 'display:none;' ">
+                  <div class="data_item" *ngFor="let product of products;">
+                    <span class="data_span1" >{{product.data_amount}}MB / {{product.validity}}</span>
+                    <span class="data_span2">NGN {{product.denomination}}</span>
+                  </div>
+                </div>
+              </div>
+            </ion-item>
+
+            <div class="d-flex">
+                <ion-button class="animate__animated animate__fadeInUp" expand="round" (click)="done()">DONE</ion-button>
+            </div>
+        </ion-list>
+    </div>
+</ion-content>

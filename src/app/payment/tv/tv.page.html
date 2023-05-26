@@ -1,0 +1,53 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start" mode="md">
+            <ion-back-button text="" icon=""></ion-back-button>
+        </ion-buttons>
+        <ion-title></ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg_color">
+    <div class="footer-rc4"><img src="assets/images/rc4.svg"/></div>
+    <div class="splash-bg-rectangle rotate1"></div>
+    <div class="splash-bg-rectangle rotate2"></div>
+    <div class="splash-bg-rectangle rotate3"></div>
+    <div class="splash-bg-rectangle rotate4"></div>
+    <div class="banner">
+        <img src="assets/images/ic_tv.svg">
+    </div>
+    <h2 class="ion-text-center">Cable/TV</h2>
+    <div class="form animate__animated animate__fadeInUp">
+        <ion-list lines="none">
+            <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                <div class="item_inner">
+                    <ion-select class="flag" mode="md" [(ngModel)]="network" [interfaceOptions]="customActionSheetOptions" interface="action-sheet" placeholder="Select Network" (ionChange)="onNetworkChange()" >
+                        <ion-select-option *ngFor="let network of networks;" value={{network.product_id}}>{{network.name}}</ion-select-option>
+                    </ion-select>
+                    <img class="flag" src="assets/images/flag_nig.svg">
+                </div>
+            </ion-item>
+
+            <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                <div class="item_inner">
+                    <ion-select mode="md" [(ngModel)]="banquet" [interfaceOptions]="customActionSheetOptions" interface="action-sheet" placeholder="Select Banquet">
+                        <ion-select-option *ngFor="let banquet of banquets;" value={{banquet.product_id}}>{{banquet.name}}</ion-select-option>
+                    </ion-select>
+                </div>
+            </ion-item>
+
+            <ion-item class="animate__animated animate__fadeInUp" [attr.style]="this.loadable || this.error ? 'margin-bottom: 12px' : 'margin-bottom: 45px'" lines="none">
+                <div class="item_inner">
+                    <ion-input mode="md" type="number" placeholder="Smart Card Number"  [(ngModel)]="smartcard"  (ionChange)="onSmartcardChange()"></ion-input>
+                </div>
+            </ion-item>
+          <ion-spinner name="crescent" *ngIf="this.loadable==true"></ion-spinner>
+          <div style="color: #eb445a; font-weight: bold; height: 33px;" *ngIf="this.loadable==false && this.error">The smartcard number is not valid.</div>
+
+
+            <div class="d-flex">
+                <ion-button class="animate__animated animate__fadeInUp" expand="round" (click)="done()">DONE</ion-button>
+            </div>
+        </ion-list>
+    </div>
+</ion-content>

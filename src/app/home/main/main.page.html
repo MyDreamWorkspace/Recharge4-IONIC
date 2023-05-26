@@ -1,0 +1,90 @@
+<ion-header class="bg_transparent d-none">
+  <ion-toolbar>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <div class="profile_about d-flex">
+    <div class="img_box center_img">
+      <img src="assets/images/avatar.svg" class="animate__animated animate__zoomInUp ic_user">
+    </div>
+    <div class="alarm_box">
+      <h2 class="d-flex">
+        <span class="name">Hi {{userInfo?.name}}</span>
+        <span class="end">
+                    <img src="assets/images/alarm.svg" class="animate__animated animate__zoomInUp ic_user">
+                    <div class="alarm_mark"></div>
+                </span>
+      </h2>
+    </div>
+  </div>
+  <ion-card class="card_balance">
+    <div class="ellipse"></div>
+    <ion-item class="animate__animated animate__fadeInUp" lines="none">
+      <ion-label class="ion-text-center balance">Available Balance</ion-label>
+    </ion-item>
+    <ion-item class="animate__animated animate__fadeInUp" lines="none">
+      <ion-label class="ion-text-center price">{{userInfo?.currency}} {{userInfo?.ac_ballance | currency: userInfo?.currency}} </ion-label>
+    </ion-item>
+    <ion-item class="animate__animated animate__fadeInUp" lines="none">
+      <ion-button (click)="wallet()">Wallet</ion-button>
+    </ion-item>
+  </ion-card>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+
+  <ion-modal trigger="open-modal">
+    <ng-template>
+      <ion-content>
+        <ion-datetime mode="md" #datetime [value]="dateValue" size="cover" (ionChange)="dateChanged(datetime.value)">
+          <!-- <div slot="title">My Custom Title</div> -->
+          <ion-buttons slot="buttons">
+            <ion-button (click)="close()">cancel</ion-button>
+            <ion-button (click)="select()">ok</ion-button>
+          </ion-buttons>
+        </ion-datetime>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+  <ion-modal trigger="open-modal2">
+    <ng-template>
+      <ion-content>
+        <ion-datetime mode="md" #datetime [value]="dateValue" size="cover" (ionChange)="dateChanged(datetime.value)">
+          <!-- <div slot="title">My Custom Title</div> -->
+          <ion-buttons slot="buttons">
+            <ion-button (click)="close()">cancel</ion-button>
+            <ion-button (click)="select()">ok</ion-button>
+          </ion-buttons>
+        </ion-datetime>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+  <div class="add-money" (click)="addMoney()">
+    <p class="ion-text-center d-flex"><ion-icon class="zmdi zmdi-plus-circle"></ion-icon>&nbsp;&nbsp;Add Money</p>
+  </div>
+  <div class="footer_inner">
+    <h5 class="ion-text-center">Transaction History<hr></h5>
+    <ion-list lines="none">
+      <ion-item class="animate__animated animate__fadeInUp" lines="none">
+        <div class="icon"><img src="assets/images/ic_sent.svg"/></div>
+        <ion-label class="ion-text-left">
+          <span class="trans_name">ABIGEAL FREEMAN</span><br/>
+          <span class="trans_time">8 Aug 2022  7:13pm</span>
+        </ion-label>
+        <span class="price ion-text-right">-5,000.00</span>
+      </ion-item>
+      <ion-item class="animate__animated animate__fadeInUp" lines="none">
+        <div class="icon rotate"><img src="assets/images/ic_sent.svg"/></div>
+        <ion-label class="ion-text-left">
+          <span class="trans_name">ABIGEAL FREEMAN</span><br/>
+          <span class="trans_time">8 Aug 2022  7:13pm</span>
+        </ion-label>
+        <span class="price ion-text-right">-5,000.00</span>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-footer>

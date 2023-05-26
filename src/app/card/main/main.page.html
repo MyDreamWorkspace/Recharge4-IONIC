@@ -1,0 +1,51 @@
+<ion-header class="d-none">
+  <ion-toolbar>
+    <ion-buttons slot="start" mode="md">
+      <ion-back-button text="" icon=""></ion-back-button>
+    </ion-buttons>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg_color">
+  <div class="footer-rc4"><img src="assets/images/rc4.svg"/></div>
+  <div class="splash-bg-rectangle rotate1"></div>
+  <div class="splash-bg-rectangle rotate2"></div>
+  <div class="splash-bg-rectangle rotate3"></div>
+  <div class="splash-bg-rectangle rotate4"></div>
+  <div class="card-container">
+    <div class="icon-box">
+      <img src="assets/images/ic_credit.svg" style="width: 55px; height: 40px"/>
+    </div>
+    <ion-card class="card-box">
+      <ion-list lines="none">
+        <ion-item class="animate__animated animate__fadeInUp" lines="none" (click)="link_card()">
+          <ion-button class="btn">
+            <div class="icon"><img src="assets/images/ic_card.svg"/></div>
+            <ion-label class="ion-text-left">
+              <span class="desc">Link your Cards</span><br/>
+            </ion-label>
+          </ion-button>
+        </ion-item>
+
+        <ion-item class="animate__animated animate__fadeInUp" lines="none" (click)="virtual_card()">
+          <ion-button class="btn">
+            <div class="icon"><img src="assets/images/ic_virtualcard.svg"/></div>
+            <ion-label class="ion-text-left">
+              <span class="desc">Online VISA Card<br/>accepted worldwide,<br/>protect your shopping Identity,<br/>Manage your Spending</span><br/>
+            </ion-label>
+          </ion-button>
+        </ion-item>
+
+        <ion-item class="animate__animated animate__fadeInUp" lines="none" (click)="gift_card()">
+          <ion-button class="btn">
+            <div class="icon"><img src="assets/images/ic_giftcard.svg"/></div>
+            <ion-label class="ion-text-left">
+              <span class="desc">Gift Card can be redeemed<br/>as value on Recharge4 or<br/>any of our services'</span><br/>
+            </ion-label>
+          </ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-card>
+  </div>
+</ion-content>

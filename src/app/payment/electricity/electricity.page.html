@@ -1,0 +1,50 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start" mode="md">
+            <ion-back-button text="" icon=""></ion-back-button>
+        </ion-buttons>
+        <ion-title></ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg_color">
+    <div class="footer-rc4"><img src="assets/images/rc4.svg"/></div>
+    <div class="splash-bg-rectangle rotate1"></div>
+    <div class="splash-bg-rectangle rotate2"></div>
+    <div class="splash-bg-rectangle rotate3"></div>
+    <div class="splash-bg-rectangle rotate4"></div>
+    <div class="banner">
+        <img src="assets/images/ic_electricity.svg">
+    </div>
+    <h2 class="ion-text-center">Electricity Bills</h2>
+    <div class="form animate__animated animate__fadeInUp">
+        <ion-list lines="none">
+            <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                <div class="item_inner">
+                    <ion-select class="flag" mode="md" [(ngModel)]="service" [interfaceOptions]="customActionSheetOptions" interface="action-sheet" placeholder="Select Electricity">
+                      <ion-select-option *ngFor="let electricity of elecService;" value={{electricity.product_id}}>{{electricity.name}}</ion-select-option>
+                    </ion-select>
+                    <img class="flag" src="assets/images/flag_nig.svg">
+                </div>
+            </ion-item>
+
+            <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                <div class="item_inner">
+                    <ion-input mode="md" type="number" [(ngModel)]="meter" (ionChange)="onMeterChange()" placeholder="Enter Meter Number"></ion-input>
+                </div>
+            </ion-item>
+          <ion-spinner name="crescent" *ngIf="this.loadable==true"></ion-spinner>
+          <div style="color: #eb445a; font-weight: bold; height: 33px;" *ngIf="this.loadable==false && this.error">The meter number is not valid.</div>
+
+            <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                <div class="item_inner">
+                    <ion-input mode="md" type="number" [(ngModel)]="amount" placeholder="Enter Amount"></ion-input>
+                </div>
+            </ion-item>
+
+            <div class="d-flex">
+                <ion-button class="animate__animated animate__fadeInUp" expand="round" (click)="done()">DONE</ion-button>
+            </div>
+        </ion-list>
+    </div>
+</ion-content>

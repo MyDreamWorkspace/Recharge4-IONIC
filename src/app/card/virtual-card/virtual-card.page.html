@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" mode="md">
+      <ion-back-button text="" icon=""></ion-back-button>
+    </ion-buttons>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg_color">
+  <div class="footer-rc4"><img src="assets/images/rc4.svg"/></div>
+  <div class="splash-bg-rectangle rotate1"></div>
+  <div class="splash-bg-rectangle rotate2"></div>
+  <div class="splash-bg-rectangle rotate3"></div>
+  <div class="splash-bg-rectangle rotate4"></div>
+  <div class="card-container animate__animated animate__fadeInUp">
+    <div class="w-full d-flex ion-justify-content-center">
+      <div class="icon-box">
+        <img src="assets/images/ic_giftcard.svg" style="width: 55px; height: 40px"/>
+      </div>
+    </div>
+    <div class="w-full d-flex ion-justify-content-center pb-30px">
+      <div class="card-box">
+        <div class="card-content">
+          <p class="ion-text-center fs-15 m-10px-0 text-primary fw-700 animate__animated animate__fadeInUp">Create Virtual Card</p>
+          <p class="ion-text-center fs-10 fw-500 mb-25px text-primary animate__animated animate__fadeInUp">
+            You can use Recharge4 virtual prepaid cards from anywhere in the world and use them to pay online on any
+            websites that accept Mastercard or Visa Prepaid Cards
+          </p>
+          <div class="p-0 form animate__animated animate__fadeInUp">
+            <ion-list lines="none" class="p-0 d-center">
+              <ion-item class="mb-15px animate__animated animate__fadeInUp" lines="none">
+                <div class="item_inner">
+                  <ion-input mode="md" type="text" placeholder="Amount"></ion-input>
+                </div>
+              </ion-item>
+
+              <ion-item class="mb-15px animate__animated animate__fadeInUp" lines="none">
+                <div class="item_inner">
+                  <ion-input mode="md" type="text" placeholder="Enter Name"></ion-input>
+                </div>
+              </ion-item>
+
+              <ion-button class="btn btn-sm animate__animated animate__fadeInUp" expand="round" (click)="create_card()">CREATE CARD</ion-button>
+            </ion-list>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

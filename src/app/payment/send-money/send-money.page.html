@@ -1,0 +1,65 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start" mode="md">
+            <ion-back-button text="" icon=""></ion-back-button>
+        </ion-buttons>
+        <ion-title></ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg_color">
+    <div class="footer-rc4"><img src="assets/images/rc4.svg"/></div>
+    <div class="splash-bg-rectangle rotate1"></div>
+    <div class="splash-bg-rectangle rotate2"></div>
+    <div class="splash-bg-rectangle rotate3"></div>
+    <div class="splash-bg-rectangle rotate4"></div>
+    <div class="banner">
+        <img src="assets/images/ic_send_money.svg">
+    </div>
+    <h2 class="ion-text-center">Send Money</h2>
+    <div class="form animate__animated animate__fadeInUp">
+        <ion-list lines="none">
+            <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                <div class="item_inner">
+                    <ion-select class="flag" value="nigeria" mode="md" [interfaceOptions]="customActionSheetOptions" interface="action-sheet" placeholder="Country">
+                      <ion-select-option value="nigeria">Nigeria</ion-select-option>
+                        <img class="flag" src="assets/images/flag_nig.svg">
+                    </ion-select>
+                    <img class="flag" src="assets/images/flag_nig.svg">
+                </div>
+            </ion-item>
+
+            <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                <div class="item_inner">
+                    <ion-select mode="md" [(ngModel)]="bank" [interfaceOptions]="customActionSheetOptions" interface="action-sheet" placeholder="Bank">
+                      <ion-select-option *ngFor="let bank of banks;" value={{bank.sortCode}}>{{bank.name}}</ion-select-option>
+                    </ion-select>
+                </div>
+            </ion-item>
+
+            <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                <div class="item_inner">
+                    <ion-input mode="md" type="number" placeholder="Account Number" [(ngModel)]="account" (ionChange)="onAccountChange()"></ion-input>
+                </div>
+            </ion-item>
+          <ion-spinner name="crescent" *ngIf="this.loadable==true"></ion-spinner>
+          <div style="color: #eb445a; font-weight: bold; height: 33px;" *ngIf="this.loadable==false && this.error">The Account number is not valid.</div>
+
+            <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                <div class="item_inner">
+                    <ion-input mode="md" type="phone" placeholder="Amount" [(ngModel)]="amount"></ion-input>
+                </div>
+            </ion-item>
+
+            <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                <div class="item_inner">
+                    <ion-input mode="md" type="phone" placeholder="What is this for? (Optional)"></ion-input>
+                </div>
+            </ion-item>
+
+            <div class="d-flex">
+                <ion-button class="animate__animated animate__fadeInUp" expand="round" (click)="done()">DONE</ion-button>
+            </div>
+        </ion-list>
+    </div>
+</ion-content>

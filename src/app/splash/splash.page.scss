@@ -1,0 +1,23 @@
+.splash {
+  position: relative;
+  overflow: hidden;
+
+  .splash-bg-color
+  {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #00C2FF 0%, #45B9FF 56.51%, #174091 100%);
+  }
+}
+
+.splash-logo
+{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.animate__animated.animate__zoomInUp {
+  --animate-duration: .15s !important;
+}

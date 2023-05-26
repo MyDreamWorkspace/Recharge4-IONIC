@@ -1,0 +1,51 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start" mode="md">
+            <ion-back-button text="" icon=""></ion-back-button>
+        </ion-buttons>
+        <ion-title></ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg_color">
+    <div class="footer-rc4"><img src="assets/images/rc4.svg"/></div>
+    <div class="splash-bg-rectangle rotate1"></div>
+    <div class="splash-bg-rectangle rotate2"></div>
+    <div class="splash-bg-rectangle rotate3"></div>
+    <div class="splash-bg-rectangle rotate4"></div>
+
+    <div class="banner">
+        <img src="assets/images/ic_utility.svg">
+    </div>
+    <h2 class="ion-text-center">Utility Fees Payment</h2>
+    <div class="form animate__animated animate__fadeInUp">
+        <ion-list lines="none">
+            <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                <div class="item_inner">
+                    <ion-select class="flag" mode="md" [interfaceOptions]="customActionSheetOptions" interface="action-sheet" placeholder="WASSCE">
+                        <ion-select-option value="f">Female</ion-select-option>
+                        <ion-select-option value="m">Male</ion-select-option>
+                        <img class="flag" src="assets/images/flag_nig.svg">
+                    </ion-select>
+                    <img class="flag" src="assets/images/flag_nig.svg">
+                </div>
+            </ion-item>
+
+            <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                <div class="item_inner">
+                    <ion-input mode="md" type="number" placeholder="Registration Number"></ion-input>
+                </div>
+            </ion-item>
+
+            <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                <div class="item_inner">
+                    <ion-input mode="md" type="number" placeholder="Enter Amount"></ion-input>
+                </div>
+            </ion-item>
+
+            <div class="d-flex">
+                <ion-button class="animate__animated animate__fadeInUp" expand="round" (click)="done()">DONE</ion-button>
+            </div>
+        </ion-list>
+    </div>
+</ion-content>

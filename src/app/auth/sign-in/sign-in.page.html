@@ -1,0 +1,94 @@
+<ion-header class="d-none">
+  <ion-toolbar>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg_color">
+  <div class="footer-rc4"><img src="assets/images/rc4.svg"/></div>
+  <div class="splash-bg-rectangle rotate1"></div>
+  <div class="splash-bg-rectangle rotate2"></div>
+  <div class="splash-bg-rectangle rotate3"></div>
+  <div class="splash-bg-rectangle rotate4"></div>
+
+  <div class="content_inner">
+    <ion-segment mode="ios" (ionChange)="segmentChanged()" [(ngModel)]="segment" lines="none">
+      <ion-segment-button mode="ios" value="0">
+        <ion-label>
+          <span>Login</span>
+        </ion-label>
+      </ion-segment-button>
+      <ion-segment-button mode="ios" value="1">
+        <ion-label>
+          <span>Sign Up</span>
+        </ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div class="tab_content">
+    <ion-slides #slides (ionSlideDidChange)="slideChanged()">
+      <!--  Find pool section start -->
+      <ion-slide>
+        <div class="form animate__animated animate__fadeInUp">
+          <div class="img_box">
+            <img src="assets/images/border_img.svg">
+            <img src="assets/images/avatar.svg" class="animate__animated animate__zoomInUp ic_user">
+          </div>
+          <h2 class="ion-text-center">Welcome Back!</h2>
+          <div class="form">
+            <ion-list lines="none">
+              <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                <div class="item_inner">
+                  <ion-input mode="md" [(ngModel)]="email" type="email|text" placeholder="Enter Email or Username"></ion-input>
+                </div>
+              </ion-item>
+              <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                <div class="item_inner">
+                  <ion-input mode="md" [(ngModel)]="password" type="password" placeholder="Password"></ion-input>
+                </div>
+              </ion-item>
+              <h5 class="forget_password ion-text-right" (click)="forget_password()">Forget Password?</h5>
+            </ion-list>
+            <br/>
+            <ion-button size="large" class="btn animate__animated animate__fadeInUp" expand="round" (click)="continue()">Login</ion-button>
+          </div>
+        </div>
+      </ion-slide>
+      <!--  Find pool section end -->
+
+      <!--  Offer pool section start -->
+      <ion-slide>
+        <div class="form animate__animated animate__fadeInUp">
+          <div class="form">
+            <ion-list lines="none">
+              <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                <div class="item_inner">
+                  <ion-input mode="md" type="email|text" placeholder="Enter Email or Username"></ion-input>
+                </div>
+              </ion-item>
+              <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                <div class="item_inner">
+                  <ion-input mode="md" type="text" placeholder="Password"></ion-input>
+                </div>
+              </ion-item>
+              <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                <div class="item_inner">
+                  <ion-input mode="md" type="text" placeholder="Confirm Password"></ion-input>
+                </div>
+              </ion-item>
+            </ion-list>
+
+            <ion-button size="large" class="btn animate__animated animate__fadeInUp" expand="round" (click)="continue()">Sign Up</ion-button>
+          </div>
+
+          <div class="button_container">
+            <ion-button size="large" class="btn animate__animated animate__fadeInUp" expand="round" (click)="continue()"><img src="assets/images/ic_google.svg"/>Sign Up with Gmail</ion-button>
+            <ion-button size="large" class="btn animate__animated animate__fadeInUp" expand="round" (click)="continue()"><img src="assets/images/ic_facebook.svg"/>&nbsp;Sign Up with Facebook</ion-button>
+          </div>
+        </div>
+      </ion-slide>
+      <!--  Offer pool  section start -->
+    </ion-slides>
+  </div>
+</ion-content>

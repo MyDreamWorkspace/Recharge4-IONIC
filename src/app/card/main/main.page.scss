@@ -1,0 +1,155 @@
+.mb-10px {
+  margin-bottom: 10px;
+}
+
+.mb-15px {
+  margin-bottom: 15px;
+}
+
+.mb-25px {
+  margin-bottom: 25px;
+}
+
+.mr-5px {
+  margin-right: 5px;
+}
+
+.fs-12 {
+  font-size: 12px;
+}
+
+.fw-700 {
+  font-weight: 700;
+}
+
+.pb-0 {
+  padding-bottom: 0;
+}
+
+.border-b-0 {
+  border-bottom: 0 !important;
+}
+
+.text-primary {
+  color: #174293;
+}
+
+.btn-primary {
+  background-color: #174293;
+  border: 2px solid #00C2FF;
+  border-radius: 55px;
+  color: white!important;
+  width: 100%;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: normal !important;
+  margin-bottom: 15px;
+  text-transform: none;
+  padding: 15px 25px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+}
+
+.card-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-box {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #71FFF7 0%, #075EEC 100%);
+  border-radius: 48px;
+  padding: 50px 0px;
+}
+
+.card-content {
+  background: white;
+  border-radius: 27px;
+  width: 100%;
+  padding: 20px;
+  height: fit-content;
+}
+
+.icon-box {
+  border: 3px solid #64EBF5;
+  border-radius: 50px;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: -55px;
+  z-index: 5;
+  background: white;
+}
+
+.fs-15 {
+  font-size: 15px;
+}
+
+.m-10px-0 {
+  margin: 10px 0;
+}
+
+.p-0 {
+  padding: 0;
+}
+
+.mb-25px {
+  margin-bottom: 25px;
+}
+
+.d-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn-sm {
+  width: fit-content;
+  color: black;
+  letter-spacing: normal !important;
+  padding: 10px 15px;
+}
+
+ion-list {
+  width: 100%;
+  padding: 0 12px;
+  background: transparent;
+  ion-item {
+    --background: transparent !important;
+    margin-bottom: 24px;
+    ion-button {
+      color: black;
+      --background: white !important;
+      --border-radius: 42px !important;
+      height: 100%;
+      min-height: 84px;
+      .icon {
+        margin: 0px 12px;
+        display: flex;
+        img {
+          width: 48px;
+          height: 48px;
+          margin: auto;
+        }
+      }
+      ion-label {
+        flex: 1 !important;
+      }
+      span.desc {
+        font-size: 8px;
+        letter-spacing: 0px;
+        color: black;
+      }
+    }
+  }
+}

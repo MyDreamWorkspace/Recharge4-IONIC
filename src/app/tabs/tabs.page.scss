@@ -1,0 +1,41 @@
+ion-tabs {
+  ion-tab-bar {
+    background: linear-gradient(180deg, #075EEC 90%, #075EEC 100%) !important;
+    box-shadow: 0 4px 41px 10px rgb(0 0 0 / 10%);
+    --animate-duration: .4s !important;
+    border-radius: 0;
+    height: 65px;
+    ion-tab-button {
+      background: transparent !important;
+      --ripple-color: var(--transparent) !important;
+      position: relative;
+      ion-label {
+        color: var(--text-dark);
+        font-size: 0.65rem;
+        font-weight: 600;
+        letter-spacing: 0;
+        margin: 0;
+      }
+      ion-icon{
+        background: transparent !important;
+        font-size: 1.3rem;
+        margin-bottom: 5px;
+        color: white;
+        position: relative;
+        top: -2px;
+      }
+      object {
+        pointer-events: none;
+      }
+      &.tab-selected {
+        ion-icon {
+          color: var(--primary);
+        }
+        object {
+          filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(160deg) brightness(104%) contrast(97%);
+          pointer-events: none;
+        }
+      }
+    }
+  }
+}

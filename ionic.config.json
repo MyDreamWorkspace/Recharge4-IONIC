@@ -1,0 +1,8 @@
+{
+  "name": "recharge4",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}
